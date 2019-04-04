@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main()
+{
+int i,j,k,n;
+int A[10][10],c,m;
+printf("enter the number of rows ");
+scanf("%d",&n);
+printf("enter the cost ");
+for(i=1;i<=n;i++)
+	for(j=1;j<=n;j++)
+		scanf("%d",&A[i][j]);
+for(k=1;k<=n;k++)
+	for(i=1;i<=n;i++)
+		for(j=1;j<=n;j++)
+		{
+			c=A[i][k]+A[k][j];
+			m=A[i][j];
+			if(m>c)
+				A[i][j]=c;
+		}
+printf("the shortest path is \n");
+for(i=1;i<=n;i++)
+{
+	for(j=1;j<=n;j++)
+		printf("%d\t",A[i][j]);
+	printf("\n");
+}
+return 0;
+}
